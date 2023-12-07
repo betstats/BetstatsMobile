@@ -1,0 +1,35 @@
+export const urls = {
+  leagues: '/leagues',
+  mainLeagues: '/leagues/main',
+  fixtureStats: '/fixture/stats',
+  fixtureEvents: '/fixture/events',
+  cardStats: '/fixture/card-stats',
+  cornerStats: '/fixture/corner-stats',
+  shotsStats: '/fixture/shot-stats',
+  goalStats: '/fixture/goal-stats',
+  shotsOnGoalStats: '/fixture/shots-on-goal-stats',
+  fixtures: '/fixtures',
+  odds: '/odds',
+  predictions: '/predictions',
+  players: {
+    main: '/players',
+    squads: '/squad',
+  },
+  teams: {
+    resume: '/team/resume',
+  },
+  search: '/search',
+  auth: {
+    register: '/auth/register',
+    emailVerify: '/auth/email-verify',
+    login: '/auth/login',
+    googleLogin: '/auth/google-login',
+    passwordRecovery: '/auth/password-recovery',
+    updatePassword: '/auth/update-password',
+  },
+  user: {
+    info: '/user/info',
+    toggleFavLeague: '/user/fav-league-toggle',
+    updateInfo: '/user/update-info',
+  },
+};

@@ -9,6 +9,7 @@ import { useToast } from '../../../context/Snackbar';
 import { authToken } from '../../../configs/tokens';
 import { Keyboard } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TabsNavigatorScreenName } from '../../../navigator/TabsNavigator';
 
 export const useLogin = ({ navigation }: LoginScreenProps) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -31,7 +32,7 @@ export const useLogin = ({ navigation }: LoginScreenProps) => {
         await AsyncStorage.setItem(authToken, res.data.token);
         const token = await AsyncStorage.getItem(authToken);
         console.log(token);
-        navigation.navigate('Start');
+        navigation.navigate(TabsNavigatorScreenName);
       },
       onError: (err: any) => {
         toast.error(err.response.data.message);

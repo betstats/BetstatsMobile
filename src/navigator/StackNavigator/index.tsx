@@ -4,6 +4,7 @@ import { Login, LoginScreenName } from '../../screens/Login';
 import { StartScreenName, Start } from '../../screens/Start';
 import { RootStackParamList } from './types';
 import colors from '../../theme/colors';
+import { TabsNavigator, TabsNavigatorScreenName } from '../TabsNavigator';
 
 export const StackNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,6 +33,13 @@ export const StackNavigator = () => {
           }}
           name={LoginScreenName}
           component={Login}
+        />
+        <Stack.Screen
+          component={TabsNavigator}
+          name={TabsNavigatorScreenName}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -5,6 +5,7 @@ import { RootStackParamList } from '../../navigator/StackNavigator/types';
 import { LoginScreenName } from '../Login';
 import { SvgXml } from 'react-native-svg';
 import { GoogleIcon } from '../../../assets/icons/google';
+import { RegisterScreenName } from '../Register';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Start'>;
 
@@ -28,7 +29,11 @@ export const Start = ({ navigation }: Props) => {
           <SvgXml xml={GoogleIcon} width="20" height="20" />
           <Text className="font-bold text-lg ml-4 text-light-text">Sign in with Google</Text>
         </Button>
-        <Button isOutlined className="rounded-full w-full">
+        <Button
+          onPress={() => navigation.navigate(RegisterScreenName)}
+          isOutlined
+          className="rounded-full w-full"
+        >
           <Text className="font-bold text-lg ml-4 text-primary-brand">Criar conta</Text>
         </Button>
       </View>

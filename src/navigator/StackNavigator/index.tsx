@@ -5,6 +5,7 @@ import { StartScreenName, Start } from '../../screens/Start';
 import { RootStackParamList } from './types';
 import colors from '../../theme/colors';
 import { TabsNavigator, TabsNavigatorScreenName } from '../TabsNavigator';
+import { Register, RegisterScreenName } from '../../screens/Register';
 
 export const StackNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -16,6 +17,7 @@ export const StackNavigator = () => {
           component={Start}
           name={StartScreenName}
           options={{
+            title: 'Início',
             headerShown: false,
           }}
         />
@@ -33,6 +35,21 @@ export const StackNavigator = () => {
           }}
           name={LoginScreenName}
           component={Login}
+        />
+        <Stack.Screen
+          name={RegisterScreenName}
+          component={Register}
+          options={{
+            title: 'Registro',
+            headerStyle: {
+              backgroundColor: colors.light.bgCross,
+            },
+            headerTintColor: colors.light.textCross,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerTitleAlign: 'left',
+          }}
         />
         <Stack.Screen
           component={TabsNavigator}

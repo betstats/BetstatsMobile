@@ -9,6 +9,7 @@ import { UserIconSvg } from '../../../assets/icons/user';
 import { PasswordIcon } from '../../../assets/icons/password';
 import { OpenEye } from '../../../assets/icons/eyeOpen';
 import { CloseEye } from '../../../assets/icons/eyeClose';
+import { RegisterScreenName } from '../Register';
 
 export const LoginScreenName = 'Login';
 export type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
@@ -30,7 +31,7 @@ export const Login = (props: LoginScreenProps) => {
             Nao possui conta Betstats?{' '}
             <Text
               onPress={() => {
-                /** */
+                props.navigation.navigate(RegisterScreenName);
               }}
               className="font-bold text-primary-brand"
             >

@@ -15,7 +15,7 @@ export const LoginScheme = z.object({
     })
     .min(1, requiredFieldMessage)
     .email('Email inválido.'),
-  password: z.string().min(1, requiredFieldMessage),
+  password: z.string({ required_error: requiredFieldMessage }).min(1),
 });
 
 export type LoginFormType = z.infer<typeof LoginScheme>;

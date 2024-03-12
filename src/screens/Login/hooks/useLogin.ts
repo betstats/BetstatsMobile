@@ -30,8 +30,6 @@ export const useLogin = ({ navigation }: LoginScreenProps) => {
     await loginRequest(data, {
       onSuccess: async (res) => {
         await AsyncStorage.setItem(authToken, res.data.token);
-        const token = await AsyncStorage.getItem(authToken);
-        console.log(token);
         navigation.navigate(TabsNavigatorScreenName);
       },
       onError: (err: any) => {

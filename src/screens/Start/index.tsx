@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Button } from '../../components/Button';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigator/StackNavigator/types';
@@ -6,6 +6,7 @@ import { LoginScreenName } from '../Login';
 import { SvgXml } from 'react-native-svg';
 import { GoogleIcon } from '../../../assets/icons/google';
 import { RegisterScreenName } from '../Register';
+import { LogoSVG } from '../../../assets/brand/logo';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Start'>;
 
@@ -13,12 +14,14 @@ export const StartScreenName = 'Start';
 
 export const Start = ({ navigation }: Props) => {
   return (
-    <View className="flex-1 flex-col justify-end items-center gap-10 py-28 px-10">
-      <Image source={require('../../../assets/images/Logo.png')} />
-      <Text className="text-light-text font-bold text-center text-lg">
-        Veja estátisticas pré-match de qualquer partida de futebol do mundo.
-      </Text>
-      <View className="w-full flex-col gap-4 items-center px-4">
+    <View className="flex-1 flex-col justify-end items-center gap-10 py-16 px-10">
+      <SvgXml xml={LogoSVG({ type: 'light' })} />
+      <View className="w-full bg-light-weakCross rounded-md flex justify-center items-center py-4 px-2">
+        <Text className="text-center">
+          Veja estátisticas pré-match de qualquer partida de futebol do mundo.
+        </Text>
+      </View>
+      <View className="w-full flex-col gap-4 items-center">
         <Button
           className="w-full rounded-full"
           onPress={() => navigation.navigate(LoginScreenName)}

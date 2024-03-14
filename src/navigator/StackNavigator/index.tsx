@@ -6,6 +6,7 @@ import { RootStackParamList } from './types';
 import colors from '../../theme/colors';
 import { TabsNavigator, TabsNavigatorScreenName } from '../TabsNavigator';
 import { Register, RegisterScreenName } from '../../screens/Register';
+import { ResetPassword, ResetPasswordScreenName } from '../../screens/ResetPassword';
 
 export const StackNavigator = () => {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -35,6 +36,21 @@ export const StackNavigator = () => {
           }}
           name={LoginScreenName}
           component={Login}
+        />
+        <Stack.Screen
+          name={ResetPasswordScreenName}
+          component={ResetPassword}
+          options={{
+            title: 'Recuperar senha',
+            headerStyle: {
+              backgroundColor: colors.light.bgCross,
+            },
+            headerTintColor: colors.light.textCross,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerTitleAlign: 'left',
+          }}
         />
         <Stack.Screen
           name={RegisterScreenName}

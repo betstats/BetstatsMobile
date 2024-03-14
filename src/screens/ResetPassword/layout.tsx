@@ -7,19 +7,17 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { NewPasswordForm } from './components/NewPasswordForm';
 import { EmailForm } from './components/EmailForm';
-import { CodeForm } from './components/CodeForm';
 import { FORM_STEPS } from './types';
 import { useResetPasswordContext } from './context';
+import { Confirmation } from './components/Confirmation';
 
 export const ResetPasswordLayout = () => {
   const { actualStep } = useResetPasswordContext();
 
   const FormSteps = {
     [FORM_STEPS.EMAIL]: <EmailForm />,
-    [FORM_STEPS.CODE]: <CodeForm />,
-    [FORM_STEPS.NEW_PASSWORD]: <NewPasswordForm />,
+    [FORM_STEPS.CONFIRMATION]: <Confirmation />,
   };
 
   return (

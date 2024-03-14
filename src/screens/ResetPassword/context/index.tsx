@@ -3,6 +3,7 @@ import { FORM_STEPS } from '../types';
 
 type ContextProps = {
   actualStep: FORM_STEPS;
+  setActualStep: React.Dispatch<React.SetStateAction<FORM_STEPS>>;
 };
 
 const ResetPasswordContext = createContext<ContextProps>({} as ContextProps);
@@ -14,6 +15,7 @@ export const ResetPasswordProvider = ({ children }: { children: React.ReactNode 
     <ResetPasswordContext.Provider
       value={{
         actualStep,
+        setActualStep,
       }}
     >
       {children}
